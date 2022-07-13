@@ -1,1 +1,35 @@
-ニュー
+<%# 投稿フォーム %>
+<div class="items-form">
+
+  <%= form_with model: @item, local: true do |f| %>
+
+    <div class="item-name">
+     品物名
+    </div>
+    <%= f.text_area :name, class:"item-name-form", placeholder:"品物名を入力してください（必須）", maxlength:"30" %>
+
+    <div class="item-area">
+     陳列場所
+    </div>
+    <%= f.text_area :area, class:"item-area-form", placeholder:"陳列場所を詳しく記載してください（必須）", maxlength:"70"%>
+
+    <div class="item-genre-form">
+     ジャンル
+    </div>
+    <%= f.collection_select(:genre_id, Genre.all, :id , :name, {})%>
+    
+    <div class="item-image">
+     画像を添付できます
+    </div>
+    <%= f.file_field :image, class:"item-image-form"%>
+
+    <%# 投稿フォーム以上 %>
+    <div class="item-form-botton">
+     <%= f.submit "投稿する", class:"form-botton"%>
+    </div>
+    
+    <div class="item-form-back">
+     <%= link_to "もどる" , root_path ,class:"back-botton"%>
+    </div>
+  <% end %>
+</div>
