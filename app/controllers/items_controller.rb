@@ -20,7 +20,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def list
+  end
+
   def search
+    @item = Item.search(params[:keyword])
+  end
+
+  def show
   end
 
 

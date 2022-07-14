@@ -1,1 +1,30 @@
-こ
+<%# 検索フォーム%>
+<%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
+ <%= form.text_field :keyword, placeholder: "品物名を入力してください", class: "search-input" %>
+ <%= form.submit "検索", class: "search-button" %>
+<% end %>
+<%# /検索フォーム%>
+
+<%# 品物表示 %>
+ <% @item.each do |item| %>
+  <div class="item-list">
+   <ul><li>
+    <div class="item-name-list">
+      <%= link_to "#{item.name}", item_path(item.id) %>
+    </div>
+
+    <div class="item-genre-list">
+      <%= item.genre.name %>
+    </div>
+   </li></ul>
+  </div>
+ <% end %>
+<%# /品物表示 %>
+
+<%# 表示する品物が存在しない場合 %>
+<div class="item-none">
+ <% if @item.size == 0 %>
+  品物が登録されていません。
+ <% end %>
+</div>
+<%# /表示する品物が存在しない場合 %>
