@@ -6,6 +6,17 @@
 <%# /検索フォーム%>
 
 <%# 品物表示 %>
+<% if @item.size != 0 %>
+ <div class="item-info">
+  <div class="item-name-info">
+   品物名
+  </div>
+  <div class="item-genre-info">
+   ジャンル名
+  </div>
+ </div>
+<% end %>
+
  <% @item.each do |item| %>
   <div class="item-list">
    <ul><li>
