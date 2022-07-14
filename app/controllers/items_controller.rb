@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
 
+  def menu
+  end
+
   def index 
   end
 
@@ -10,8 +13,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
 
+    flash[:failed]  = "登録に失敗しました。"
+
     unless @item.save
-      render:new
+      render :new  
     end
   end
 
