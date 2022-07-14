@@ -1,0 +1,12 @@
+<% if model.errors.any?%>
+ <div class="error-messages">
+  <%= flash.now[:failed] %>
+  <ul>
+   <% model.errors.full_messages.each do |m| %>
+   <li class="error-message">
+    <%= m %>
+   </li>
+   <% end %>
+  </ul>
+ </div>
+<% end %>
