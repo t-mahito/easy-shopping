@@ -7,7 +7,7 @@ Easy-Shopping
 <br></br>
 
 # URL
-http//<br>
+http://54.65.14.250<br>
 <br></br>
 
 # テスト用アカウント
