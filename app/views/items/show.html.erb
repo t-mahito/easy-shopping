@@ -1,0 +1,35 @@
+<% if @item.image.present?%>
+ <%= image_tag @item.image ,class:"show-image" %>
+<% end %>
+
+<div class="show-item">
+ <div class="show-item-name">
+  <%= @item.name %>
+ </div>
+
+ <div class="show-genre">
+  【ジャンル名】:
+  <%= @item.genre.name %>
+ </div>
+
+ <div class="show-area-info">
+  【陳列場所】
+ </div>
+
+ <div class="show-area">
+  <%= @item.area %>
+ </div>
+
+</div>
+
+<div class="item-change">
+
+ <div class="item-edit">
+  <%=link_to "品物情報を変更する", root_path %>
+ </div>
+
+ <div class="item-destroy">
+  <%= link_to "品物情報を削除する",root_path%>
+ </div>
+ 
+</div>
