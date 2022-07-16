@@ -36,6 +36,9 @@ class ItemsController < ApplicationController
   end
 
   def update
+    unless @item.update(item_params)
+      render :edit
+    end
   end
 
 
