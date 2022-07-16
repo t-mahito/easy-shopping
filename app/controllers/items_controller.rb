@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
 
+  before_action :find_item, only: [:show, :edit, :update]
+
   def menu
   end
 
@@ -28,12 +30,25 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
+
+  def edit
+  end
+
+  def update
+    unless @item.update(item_params)
+      render :edit
+    end
+  end
+
 
 
  private
   def item_params
     params.require(:item).permit(:name,:area,:genre_id,:image)
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 end
