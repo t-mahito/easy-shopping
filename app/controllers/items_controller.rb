@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :find_item, only: [:show, :edit, :update]
+  before_action :find_item, only: [:show, :edit, :update, :destroy]
 
   def menu
   end
@@ -39,6 +39,10 @@ class ItemsController < ApplicationController
     unless @item.update(item_params)
       render :edit
     end
+  end
+
+  def destroy
+    @item.destroy
   end
 
 
