@@ -1,11 +1,13 @@
 class ItemsController < ApplicationController
 
   before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
 
   def menu
   end
 
   def index 
+    redirect_to root_path
   end
 
   def new
@@ -55,4 +57,5 @@ class ItemsController < ApplicationController
   def find_item
     @item = Item.find(params[:id])
   end
+
 end
