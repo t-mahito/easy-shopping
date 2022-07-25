@@ -1,11 +1,13 @@
 class ItemsController < ApplicationController
 
   before_action :find_item, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :destroy]
 
   def menu
   end
 
   def index 
+    redirect_to root_path
   end
 
   def new
@@ -33,6 +35,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    unless @item.user.id == current_user.id
+      redirect_to action: :index
+    end
   end
 
   def update
@@ -42,17 +47,20 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
+    if @item.user.id == current_user.id
+     @item.destroy
+    end
   end
 
 
 
  private
   def item_params
-    params.require(:item).permit(:name,:area,:genre_id,:image)
+    params.require(:item).permit(:name,:area,:genre_id,:image).merge(user_id: current_user.id)
   end
 
   def find_item
     @item = Item.find(params[:id])
   end
+
 end

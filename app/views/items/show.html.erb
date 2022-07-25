@@ -22,14 +22,15 @@
 
 </div>
 
-<div class="item-change">
 
- <div class="item-edit">
-  <%=link_to "品物情報を変更する", edit_item_path %>
- </div>
+<% if user_signed_in? && current_user.id == @item.user.id %>
+ <div class="item-change">
+  <div class="item-edit">
+   <%=link_to "品物情報を変更する", edit_item_path %>
+  </div>
 
  <div class="item-destroy">
   <%= link_to "品物情報を削除する", item_path, method: :delete %>
  </div>
-
 </div>
+<% end %>

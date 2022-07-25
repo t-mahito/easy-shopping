@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
+  belongs_to :user
   has_one_attached :image
 
   validates :name, presence: { message: "品物名を入力してください。"}
