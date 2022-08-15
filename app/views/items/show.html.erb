@@ -1,11 +1,11 @@
-<% if @item.image.present?%>
- <%= image_tag @item.image ,class:"show-image" %>
-<% end %>
-
 <div class="show-item">
  <div class="show-item-name">
   <%= @item.name %>
  </div>
+
+<% if @item.image.present?%>
+ <%= image_tag @item.image ,id:"show-image" %>
+<% end %>
 
  <div class="show-genre">
   【ジャンル名】:
