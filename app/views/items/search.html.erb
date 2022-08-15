@@ -1,13 +1,21 @@
 <%# 検索フォーム%>
-<%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form| %>
- <%= form.text_field :keyword, placeholder: "品物名を入力してください", class: "search-input" %>
- <%= form.submit "検索", class: "search-button" %>
+
+<%= form_with(url: search_items_path, local: true, method: :get ) do |form| %>
+ <div class="search-area">
+  <div class="search-form">
+   <%= form.text_field :keyword, placeholder: "品物名を入力してください", class: "search-input" %>
+  </div>
+  <div class="search-btn">
+   <%= form.submit "検索", class: "search-button" %>
+  </div>
+ </div>
 <% end %>
+
 <%# /検索フォーム%>
 
 <%# 品物表示 %>
 <% if @item.size != 0 %>
- <div class="item-info">
+ <div class="item-title">
   <div class="item-name-info">
    品物名
   </div>
@@ -15,27 +23,37 @@
    ジャンル名
   </div>
  </div>
-<% end %>
 
- <% @item.each do |item| %>
-  <div class="item-list">
+
+
+<div class="item-zone">
+ <% @item.each do |item| %>  
    <ul><li>
-    <div class="item-name-list">
-      <%= link_to "#{item.name}", item_path(item.id) %>
-    </div>
+    <div class="item-zone-list">
+     <div class="item-name-list">
+       <%= link_to "・#{item.name}", item_path(item.id) ,id:"item"%>
+     </div>
 
-    <div class="item-genre-list">
-      <%= item.genre.name %>
+     <div class="item-genre-list">
+       <%= item.genre.name %>
+     </div>
     </div>
    </li></ul>
-  </div>
  <% end %>
+ </div>
+ <%end%>
 <%# /品物表示 %>
 
 <%# 表示する品物が存在しない場合 %>
-<div class="item-none">
+
  <% if @item.size == 0 %>
-  品物が登録されていません。
+ <div class="item-zone">
+  <div class="item-none">品物が登録されていません。</div>
+  <div class="item-none-new">品物見つかりましたら、登録していただけませんか？(要ログイン）
+  <div class="item-none-btn">
+   <%= button_to "品物を登録する", new_item_path, method: :get, id:"new-btn"%>
+  </div>
+  </div>
  <% end %>
 </div>
 <%# /表示する品物が存在しない場合 %>

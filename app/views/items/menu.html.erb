@@ -1,11 +1,11 @@
 <div class="menu">
 
- <div class="menu-serach">
-  <%= link_to "品物を探す", list_items_path%>
+ <div class="menu-search">
+  <%= button_to "品物を探す", list_items_path, method: :get,id: "btn-search" %>
  </div>
 
  <div class="menu-post">
-  <%= link_to "新たに品物を登録する",new_item_path%>
+  <%= button_to "品物を登録する",new_item_path, method: :get, id: "btn-new"%>
  </div>
  
 </div>

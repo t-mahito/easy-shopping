@@ -13,22 +13,30 @@
    <header>
     <div class="head">
      <div class="logo">
-      <%= link_to "Easy-Shoppig", root_path %>
+      <%= link_to "Easy-Shopping", root_path, id: "logocolor" %>
      </div>
     
      <div class="user-info">
 
      <%# ログイン中の表示 %>
      <% if user_signed_in? %>
+      <div class="user-registration">
        <%= current_user.nickname %>さん
+      </div>
+      <div class="login-out">
        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </div>
      <%# /ログイン中の表示 %>
      
       <% else %>
 
      <%# 非ログイン中の表示 %>
+      <div class="user-registration">
        <%= link_to "新規登録", new_user_registration_path %>
+      </div>
+      <div class="login-out">
        <%= link_to "ログイン", user_session_path %>
+      </div>
      <%# /非ログイン中の表示 %>
 
       <% end %>

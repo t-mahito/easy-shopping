@@ -1,29 +1,48 @@
 <%# 投稿フォーム %>
-<div class="items-form">
+
  <%= form_with model: @item, local: true do |f| %>
 
-   <%# バリデーションエラー時の表示 %>
-   <%= render partial: "shared/error_messages", locals: { model: f.object }%>
 
-    <div class="item-name">
-     品物名
-    </div>
-    <%= f.text_area :name, class:"item-name-form", placeholder:"品物名を入力してください（必須）", maxlength:"30" %>
+   <div class="item-new-area">
+    <%# バリデーションエラー時の表示 %>
+    <%= render partial: "shared/error_messages", locals: { model: f.object }%>
 
-    <div class="item-area">
-     陳列場所
+  
+    <div class="item-name-area">
+     <div class="item-name">
+      品物名
+     </div>
+     <div class="item-name-formarea">
+      <%= f.text_area :name, class:"item-name-form", placeholder:"品物名を入力してください（必須）", maxlength:"30" %>
+     </div>
     </div>
-    <%= f.text_area :area, class:"item-area-form", placeholder:"陳列場所を詳しく記載してください（必須）", maxlength:"70"%>
 
-    <div class="item-genre-form">
-     ジャンル
+    <div class="item-area-area">
+     <div class="item-area">
+      陳列場所
+     </div>
+     <div class="item-area-formarea">
+      <%= f.text_area :area, class:"item-area-form", placeholder:"陳列場所を詳しく記載してください（必須）", maxlength:"70"%>
+     </div>
     </div>
-    <%= f.collection_select(:genre_id, Genre.all, :id , :name, {})%>
+
+    <div class="item-genre-area">
+     <div class="item-genre">
+      ジャンル
+     </div>
+     <div class="item-genre-formarea">
+      <%= f.collection_select(:genre_id, Genre.all, :id , :name, {})%>
+     </div>
+    </div>
     
-    <div class="item-image">
-     画像を添付できます
+    <div class="item-image-area">
+     <div class="item-image">
+      画像を添付できます
+     </div>
+     <div class="item-image-formarea">
+      <%= f.file_field :image, class:"item-image-form"%>
+     </div>
     </div>
-    <%= f.file_field :image, class:"item-image-form"%>
 
     <div class="item-form-button">
      <%= f.submit "投稿する", class:"form-button"%>
@@ -32,6 +51,6 @@
     <div class="item-form-back">
      <%= link_to "もどる" , root_path ,class:"back-button"%>
     </div>
+  </div>
   <% end %>
   <%# /投稿フォーム%>
-</div>
