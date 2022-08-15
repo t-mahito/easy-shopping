@@ -23,6 +23,16 @@
 </div>
 
 
+ <div>
+<% if user_signed_in? %>
+ <%= form_with(model: [@item,@comment], local: true) do |form|%>
+  <%= form.text_area :text, placeholder: "コメントする"%>
+  <%= form.submit "投稿する"%>
+ <% end %>
+<% end%>
+ </div>
+
+
 <% if user_signed_in? && current_user.id == @item.user.id %>
  <div class="item-change">
   <div class="item-edit">
