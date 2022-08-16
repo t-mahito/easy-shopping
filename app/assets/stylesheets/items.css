@@ -271,10 +271,37 @@ background-color: darkred;
 /* show */
 
 .show-item {
-  height: 60vh;
+  height: 55vh;
   width:80vw;
   margin:10px 10vw 0 10vw;
+  overflow: scroll;
 
   background-color: #b84c00;
+
+}
+
+.comments-area {
+  width:80vw;
+  height:20vh;
+  margin: 10px 10vw 0 10vw;
+  background-color: #b84c00;
+}
+
+.comment-box {
+  width:80vw;
+  height:17vh;
+  overflow: scroll;
+  background-color:antiquewhite;
+}
+
+.comment-form {
+  text-align: center;
+}
+
+.comments {
+  display: flex;
+}
+
+.comment-text {
 
 }
