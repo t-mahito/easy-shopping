@@ -38,12 +38,6 @@ a:link, a:visited, a:hover, a:active {
  
 }
 
-.user-registration {
-
-  
- 
- 
-}
 
 
   .login-out {
@@ -284,7 +278,6 @@ background-color: darkred;
   width:80vw;
   height:20vh;
   margin: 10px 10vw 0 10vw;
-  background-color: #b84c00;
 }
 
 .comment-box {
@@ -300,8 +293,4 @@ background-color: darkred;
 
 .comments {
   display: flex;
-}
-
-.comment-text {
-
 }
