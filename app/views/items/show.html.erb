@@ -20,19 +20,6 @@
   <%= @item.area %>
  </div>
 
-</div>
-
-
- <div>
-<% if user_signed_in? %>
- <%= form_with(model: [@item,@comment], local: true) do |form|%>
-  <%= form.text_area :text, placeholder: "コメントする", rows: "2"%>
-  <%= form.submit "投稿する"%>
- <% end %>
-<% end%>
- </div>
-
-
 <% if user_signed_in? && current_user.id == @item.user.id %>
  <div class="item-change">
   <div class="item-edit">
@@ -44,3 +31,37 @@
  </div>
 </div>
 <% end %>
+
+</div>
+
+
+<div class="comments-area">
+ <% if user_signed_in? %>
+   <div class="comment-form">
+    <%= form_with(model: [@item,@comment], local: true) do |form|%>
+     <%= form.text_area :text, placeholder: "コメントする", rows: "2"%>
+     <%= form.submit "投稿する"%>
+    <% end %>
+   </div>
+ <% else %>
+   <%= "※コメントするにはログインが必要です。"%>
+ <% end %>
+
+  <div class="comment-box">
+  <% @comments.each do |comment| %> 
+
+   <div class="comments">
+    <div class="comment-name">
+     <%= "#{comment.user.nickname}："%>
+    </div>
+    <div class="comment-text">
+     <%= comment.text%>
+    </div>
+   </div>
+ 
+  <% end %>
+  </div>
+
+</div>
+
+
