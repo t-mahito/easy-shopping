@@ -205,47 +205,34 @@ border-bottom: solid black;
 .item-new-area {
   width: 90vw;
   height: 85vh;
-  overflow: scroll;
-  
-  margin:2% 0 5% 5%;
-  
+  overflow: scroll; 
+  margin:2% 0 5% 5%;  
   text-align: center;
-  
  
-  
-
-  background-color: darkgreen;
 }
 
 .item-name-area {
   padding: 10px 0;
-  background-color: aqua;
 }
 
 .item-area-area {
   padding:20px 0;
-  background-color: antiquewhite;
 }
 
 .item-genre-area {
   padding:10px 0;
-  background-color: aquamarine;
 }
 
 .item-image-area {
-  background-color: #eb6100;
 }
 
 .item-form-button {
   padding-top:15px;
-  background-color: burlywood;
 }
 
 .item-form-back {
-
 text-align: end;  
   
-background-color: darkred;
 }
 
 .form-button {
@@ -270,8 +257,17 @@ background-color: darkred;
   margin:10px 10vw 0 10vw;
   overflow: scroll;
 
-  background-color: #b84c00;
+  background-color: rgb(244, 244, 198);
 
+}
+
+.show-item-name {
+  width:80vw;
+  height:10vh;
+  font-size: 30px;
+  padding-top: 20px;
+
+  background-color: #b84c00;
 }
 
 .comments-area {
@@ -284,7 +280,7 @@ background-color: darkred;
   width:80vw;
   height:17vh;
   overflow: scroll;
-  background-color:antiquewhite;
+  background-color:rgb(240, 250, 215);
 }
 
 .comment-form {

@@ -25,7 +25,8 @@ class Genre < ActiveHash::Base
     { id: 22, name: "ギフト", area:"23"},
     { id: 23, name: "食品", area: "--"},
     { id: 24, name: "トラベル", area:"--"},
-    { id: 25, name: "取り扱いなし", area:"--"},
+    { id: 25, name: "レジ前", area:"--"},
+    { id: 26, name: "取り扱いなし", area:"--"},
 
   ]
 
