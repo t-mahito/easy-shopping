@@ -249,6 +249,19 @@ text-align: end;
   height: 100px;
 }
 
+/* create */
+
+.create-success {
+  font-size: 30px;
+  padding:50px;
+  text-align: center;
+
+}
+
+#create {
+  color: blue;
+}
+
 /* show */
 
 .show-item {
@@ -263,12 +276,42 @@ text-align: end;
 
 .show-item-name {
   width:80vw;
-  height:10vh;
+  height:55px;
   font-size: 30px;
   padding-top: 20px;
 
-  background-color: #b84c00;
 }
+
+.show-genre {
+  height:35px;
+  font-size: 20px;
+  padding-top:10px;
+  display: flex;
+
+}
+
+.show-genre-name {
+  width: 45%;
+}
+
+.show-area-info {
+  height: 35px;
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.show-area {
+  font-size: 23px;
+}
+
+.item-change {
+  display: flex;
+  justify-content:space-evenly;
+  margin-top: 80px;
+
+}
+
+
 
 .comments-area {
   width:80vw;
@@ -289,4 +332,11 @@ text-align: end;
 
 .comments {
   display: flex;
+  padding-left: 50px;
+  padding-top: 5px;
+}
+
+.comment-info {
+  padding-top:30px;
+  text-align: center;
 }

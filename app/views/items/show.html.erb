@@ -1,17 +1,22 @@
 <div class="show-item">
  <div class="show-item-name">
-  <%= "《#{@item.name}》" %>
+  <%= "《  #{@item.name}  》" %>
  </div>
 
-<% if @item.image.present?%>
- <%= image_tag @item.image ,id:"show-image" %>
-<% end %>
+ <% if @item.image.present?%>
+  <%= image_tag @item.image ,id:"show-image" %>
+ <% end %>
 
- <div class="show-genre">
+<div class="show-genre">
+ <div class="show-genre-name">
   【ジャンル名】:
   <%= @item.genre.name %>
+ </div>
+ <div class="show-genre-area">
+  【ジャンル番号】:
   <%= @item.genre.area %>
  </div>
+</div>
 
  <div class="show-area-info">
   【陳列場所】
@@ -24,11 +29,11 @@
 <% if user_signed_in? && current_user.id == @item.user.id %>
  <div class="item-change">
   <div class="item-edit">
-   <%=link_to "品物情報を変更する", edit_item_path %>
+   <%=link_to "品物情報を変更する", edit_item_path ,id:"edit"%>
   </div>
 
  <div class="item-destroy">
-  <%= link_to "品物情報を削除する", item_path, method: :delete %>
+  <%= link_to "品物情報を削除する", item_path, method: :delete,id:"destroy" %>
  </div>
 </div>
 <% end %>
@@ -61,6 +66,12 @@
    </div>
  
   <% end %>
+
+ <%if @comments.size == 0 %>
+  <div class="comment-info">
+   <%= "※コメントが表示されます。"%>
+  </div>
+ <% end %>
   </div>
 
 </div>
