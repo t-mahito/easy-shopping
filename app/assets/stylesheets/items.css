@@ -224,6 +224,8 @@ border-bottom: solid black;
 }
 
 .item-image-area {
+  height: 100px;
+  width:80px;
 }
 
 .item-form-button {
@@ -348,3 +350,47 @@ text-align: end;
   padding-top:30px;
   text-align: center;
 }
+
+
+
+/* user関連 */
+
+.new {
+  font-size: 30px;
+}
+
+.session-view {
+  height:70vh;
+  text-align: center;
+  padding-top: 30px;
+  overflow: scroll;
+
+}
+
+.nickname-field {
+  margin-top: 20px;
+}
+
+.e-mail-field {
+  margin-top: 10px;
+
+}
+
+.password-field {
+  margin-top: 15px;
+}
+
+.password-confirmation-field {
+  margin-top: 10px;
+}
+
+.action-button {
+  margin-top: 50px;
+}
+
+#error_explanation {
+  color: #eb6100;
+  margin-top: 20px;
+}
+
+
