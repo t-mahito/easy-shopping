@@ -267,7 +267,7 @@ text-align: end;
 /* show */
 
 .show-item {
-  height: 55vh;
+  height: 350px;
   width:80vw;
   margin:10px 10vw 0 10vw;
   overflow: scroll;
@@ -288,7 +288,9 @@ text-align: end;
   height:35px;
   font-size: 20px;
   padding-top:10px;
+  padding-bottom: 25px;
   display: flex;
+
 
 }
 
@@ -331,7 +333,7 @@ text-align: end;
 
 .comment-box {
   width:80vw;
-  height:17vh;
+  height:110px;
   overflow: scroll;
   background-color:rgb(240, 250, 215);
 }
