@@ -415,10 +415,52 @@ text-align: end;
   .search-input {
     height: 60px;
     font-size: 20px;
-    background-color: #b84c00;
+ 
   }
 
   .search-button {
-    font-size: 25px;
+    font-size: 15px;
+    padding: 18px;
   }
+
+  .item-name-info {
+    font-size: 20px;
+  }
+
+  .item-name-list {
+    font-size: 20px;
+  }
+
+  .item-genre-info {
+    font-size: 20px;
+  }
+
+  .item-genre-list {
+    font-size: 20px;
+  }
+
+  .show-item {
+    height:420px;
+  }
+
+  .show-genre {
+    display: block;
+  }
+
+  .show-genre-name {
+    width:100%;
+  }
+
+  .show-genre-area {
+    width: 100%;
+  }
+
+  .item-change {
+    margin-top: 150px;
+  }
+
+  .user-info {
+    font-size: 15px;
+  }
+
 }
