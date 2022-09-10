@@ -424,19 +424,23 @@ text-align: end;
   }
 
   .item-name-info {
+    width:60%;
     font-size: 20px;
   }
 
   .item-name-list {
     font-size: 20px;
+    width:65%;
   }
 
   .item-genre-info {
     font-size: 20px;
+    width:40%;
   }
 
   .item-genre-list {
     font-size: 20px;
+    width:35%;
   }
 
   .show-item {
