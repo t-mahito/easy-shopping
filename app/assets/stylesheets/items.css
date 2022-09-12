@@ -467,4 +467,11 @@ text-align: end;
     font-size: 15px;
   }
 
+  .item-none {
+    font-size: 25px;
+  }
+
+  .item-none-new {
+    font-size: 20px;
+  }
 }
